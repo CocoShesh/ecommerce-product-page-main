@@ -1,0 +1,335 @@
+:root {
+  /* ### Primary */
+
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+
+  /* ### Neutral */
+
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+}
+header {
+  margin-inline: 7rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 2rem;
+}
+ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  color: var(--Dark-grayish-blue);
+  cursor: pointer;
+}
+.line {
+  border-bottom: 1px solid var(--Grayish-blue);
+}
+li:hover {
+  border-bottom: 5px solid var(--Orange);
+  padding-bottom: 62px;
+}
+.left {
+  display: flex;
+  height: 50px;
+}
+.left img {
+  height: 30px;
+  width: 200px;
+  margin-top: 0.5rem;
+}
+.right {
+  display: flex;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right img:first-child {
+  height: 20px;
+  width: 20px;
+}
+.right img:last-child {
+  height: 50px;
+  width: 50px;
+}
+hr {
+  margin-inline: 5rem;
+  color: var(--White);
+}
+
+html,
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  position: relative;
+  height: 100%;
+}
+
+/* swiper styling */
+main {
+  margin-inline: 10rem;
+  margin-block: 4rem;
+  display: flex;
+}
+swiper-container {
+  width: 500px;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: sw </swiper-slidek;
+  width: 400px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+swiper-container {
+  width: 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper {
+  height: 80%;
+  width: 400px;
+}
+
+.mySwiper2 {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper2 .swiper-slide-thumb-active {
+  opacity: 0.5;
+}
+
+swiper-slide img {
+  display: sw</swiper-slidek;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.content-side {
+  font-family: "Kumbh Sans", sans-serif;
+  margin-inline-start: 7rem;
+  margin-inline-end: 5rem;
+  margin-block-start: 3rem;
+}
+.sneaker {
+  text-transform: uppercase;
+  color: var(--Orange);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2rem;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-block-start: 0;
+}
+.about {
+  line-height: 1.5rem;
+}
+.price {
+  display: flex;
+}
+.price-off {
+  background: var(--Light-grayish-blue);
+  padding: 0.3rem;
+  border-radius: 5px;
+  color: var(--Orange);
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.discounted-price {
+  font-weight: 700;
+  font-size: 24px;
+}
+.real-price {
+  text-decoration: line-through;
+  font-weight: 700;
+  color: var(--Grayish-blue);
+}
+.quantity {
+  display: flex;
+}
+.quantity div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+  padding-block: 1rem;
+  border-radius: 10px;
+  margin-block-start: 2rem;
+  padding-inline: 0.5rem;
+  font-weight: 700;
+  background-color: var(--Light-grayish-blue);
+}
+.quantity img:first-child {
+  width: 10px;
+  cursor: pointer;
+}
+.quantity img:last-child {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.bottom button {
+  font-weight: 700;
+  color: var(--White);
+  background: var(--Orange);
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  margin-top: 2rem;
+  margin-inline-start: 1rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+button img {
+  margin-inline-end: 1rem;
+}
+.bg {
+  position: absolute;
+  width: 1500px;
+  height: 1000px;
+  top: -50px;
+  left: -50px;
+  right: -100px;
+  z-index: 2;
+  background-color: var(--Black);
+  opacity: 75%;
+  display: none;
+}
+#close {
+  position: absolute;
+  right: 35%;
+  top: 0;
+  z-index: 3;
+  display: none;
+  cursor: pointer;
+}
+
+.popup-image .mySwiper {
+  position: absolute;
+  top: 50px;
+  z-index: 3;
+  left: 35%;
+  background-color: none;
+  cursor: pointer;
+}
+
+.popup-image .mySwiper2 {
+  position: absolute;
+  top: 559px;
+  z-index: 3;
+  left: 35%;
+  width: 400px;
+}
+.popup-image swiper-slide {
+  background: none;
+}
+.addToCart {
+  position: absolute;
+  top: 70px;
+  z-index: 3;
+  right: 50px;
+  background-color: white;
+  width: 300px;
+
+  padding-inline: 1rem;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: -2px 6px 15px -3px rgba(0, 0, 0, 0.75);
+}
+.addToCart #product {
+  display: flex;
+}
+.addToCart p:nth-child(1) {
+  border-bottom: 1px solid var(--Orange);
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-block-start: 1.5rem;
+}
+
+.addToCart img {
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.productPrice h1 {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+#delete img {
+  width: 30px;
+  height: 35px;
+  cursor: pointer;
+}
+.checkout {
+  width: 300px;
+  height: 50px;
+  font-family: "Kumbh Sans", sans-serif;
+  background: var(--Orange);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--White);
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+.message h1 {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 4rem;
+}
+.total {
+  font-weight: bold;
+}
+.notification {
+  position: absolute;
+  right: 190px;
+  top: -5px;
+  background-color: orange;
+  padding: 0.2rem;
+  border-radius: 10px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  font-size: 10px;
+  text-align: center;
+  display: none;
+}

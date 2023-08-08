@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="line">
+        <nav>
+          <div class="left">
+            <img src="images/logo.svg" alt="" />
+            <ul>
+              <li>Collections</li>
+              <li>Men</li>
+              <li>Women</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="right">
+            <img
+              src="images/icon-cart copy.svg"
+              alt=""
+              onclick="handleAddToCart()"
+              style="cursor: pointer"
+            />
+            <img src="images/image-avatar.png" alt="" style="cursor: pointer" />
+          </div>
+          <p class="notification">1</p>
+          <div class="addToCart" style="display: none">
+            <p>Cart</p>
+            <div class="message">
+              <h1>Your cart is empty</h1>
+            </div>
+            <div id="product" style="display: none">
+              <div class="image-product">
+                <img src="images/image-product-1-thumbnail.jpg" alt="" />
+              </div>
+              <div class="productPrice">
+                <h1>Fall Limited Edition Sneakers</h1>
+                <span> $150.00 </span>
+                <span>x <span id="totalQuantity"> </span></span>
+                <span class="total"> $<span id="totalPrice"></span></span>
+              </div>
+              <div id="delete">
+                <img
+                  src="images/icon-delete.svg"
+                  onclick="handleDeleteCart()"
+                  alt=""
+                />
+              </div>
+            </div>
+            <br />
+            <br />
+            <button class="checkout">Checkout</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="image-side">
+        <swiper-container
+          style="
+            --swiper-navigation-color: #ffffff00;
+            --swiper-pagination-color: #fff;
+          "
+          class="mySwiper"
+          thumbs-swiper=".mySwiper2"
+          loop="true"
+          space-between="10"
+          navigation="true"
+        >
+          <swiper-slide id="image1">
+            <img src="images/image-product-1.jpg" />
+          </swiper-slide>
+          <swiper-slide id="image2">
+            <img src="images/image-product-2.jpg" />
+          </swiper-slide>
+          <swiper-slide id="image3">
+            <img src="images/image-product-3.jpg" />
+          </swiper-slide>
+          <swiper-slide id="image4">
+            <img src="images/image-product-4.jpg" />
+          </swiper-slide>
+        </swiper-container>
+
+        <!-- thumbnails -->
+        <swiper-container
+          class="mySwiper2"
+          loop="true"
+          space-between="10"
+          slides-per-view="4"
+          free-mode="true"
+          watch-slides-progress="true"
+        >
+          <swiper-slide>
+            <img src="images/image-product-1-thumbnail.jpg" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="images/image-product-2-thumbnail.jpg" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="images/image-product-3-thumbnail.jpg" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="images/image-product-4-thumbnail.jpg" />
+          </swiper-slide>
+        </swiper-container>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+      </section>
+      <section class="content-side">
+        <p class="sneaker">Sneaker Company</p>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p class="about">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price">
+          <span class="discounted-price"> $125.00</span>
+          <span class="price-off"> 50% </span>
+        </div>
+
+        <span class="real-price"> $250.00 </span>
+        <div class="bottom">
+          <div class="quantity">
+            <div>
+              <img
+                src="images/icon-minus.svg"
+                alt=""
+                onclick="handleMinusQuantity()"
+              />
+              <span id="quantity-value"> 0</span>
+              <img
+                src="images/icon-plus.svg"
+                alt=""
+                onclick="handlePlusQuantity()"
+              />
+            </div>
+            <button id="Add-To-Cart">
+              <img src="images/icon-cart.svg" alt="" />Add to cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- zoom -->
+    <div class="bg"></div>
+    <div class="popup-image" id="popup" style="display: none">
+      <img
+        src="images/icon-close.svg"
+        id="close"
+        alt=""
+        onclick="handleClose()"
+      />
+      <swiper-container
+        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+        class="mySwiper"
+        thumbs-swiper=".mySwiper2"
+        loop="true"
+        space-between="10"
+        navigation="true"
+      >
+        <swiper-slide>
+          <img src="images/image-product-1.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/image-product-2.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/image-product-3.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/image-product-4.jpg" />
+        </swiper-slide>
+      </swiper-container>
+
+      <!-- thumbnails -->
+      <swiper-container
+        class="mySwiper2"
+        loop="true"
+        space-between="10"
+        slides-per-view="4"
+        free-mode="true"
+        watch-slides-progress="true"
+      >
+        <swiper-slide>
+          <img src="images/image-product-1-thumbnail.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/image-product-2-thumbnail.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/image-product-3-thumbnail.jpg" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/image-product-4-thumbnail.jpg" />
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="index.js"></script>
+  </body>
+</html>
